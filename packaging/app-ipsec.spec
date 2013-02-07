@@ -1,7 +1,7 @@
 
 Name: app-ipsec
 Epoch: 1
-Version: 1.1.0
+Version: 1.1.1
 Release: 1%{dist}
 Summary: IPsec - Core
 License: LGPLv3
@@ -15,7 +15,7 @@ The IPsec app provides core system functions for IPsec VPNs
 %package core
 Summary: IPsec - Core
 Requires: app-base-core
-Requires: openswan
+Requires: /usr/sbin/ipsec
 
 %description core
 The IPsec app provides core system functions for IPsec VPNs
