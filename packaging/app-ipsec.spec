@@ -1,7 +1,7 @@
 
 Name: app-ipsec
 Epoch: 1
-Version: 1.1.1
+Version: 1.6.5
 Release: 1%{dist}
 Summary: IPsec - Core
 License: LGPLv3
@@ -54,9 +54,7 @@ exit 0
 %files core
 %defattr(-,root,root)
 %exclude /usr/clearos/apps/ipsec/packaging
-%exclude /usr/clearos/apps/ipsec/tests
 %dir /usr/clearos/apps/ipsec
 /usr/clearos/apps/ipsec/deploy
 /usr/clearos/apps/ipsec/language
-/usr/clearos/apps/ipsec/libraries
 /var/clearos/base/daemon/ipsec.php
