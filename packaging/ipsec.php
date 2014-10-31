@@ -19,7 +19,7 @@ clearos_load_language('ipsec');
 // 'pid_file' => '/var/run/pluto/pluto.pid'
 $configlet = array(
 	'title' => lang('ipsec_app_name'),
-	'package' => 'openswan',
+	'package' => 'libreswan',
 	'process_name' => 'pluto',
 	'reloadable' => FALSE,
 );
