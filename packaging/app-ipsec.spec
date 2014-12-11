@@ -1,7 +1,7 @@
 
 Name: app-ipsec
 Epoch: 1
-Version: 2.0.1
+Version: 2.0.5
 Release: 1%{dist}
 Summary: IPsec - Core
 License: LGPLv3
