@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ -e /var/clearos/ipsec/libreswan_boot ]; then
+    exit 0
+fi
+
+if [ ! -e /var/clearos/ipsec/libreswan_cron ]; then
+    logger -p local6.notice -t installer "app-ipsec-core - creating libreswan boot cron"
+    echo "* * * * *  root /usr/clearos/apps/ipsec/deploy/libreswan_boot" >> /etc/cron.d/app-ipsec-migrate
+    touch /var/clearos/ipsec/libreswan_cron
+fi

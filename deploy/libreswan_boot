@@ -1,0 +1,15 @@
+#!/bin/sh
+
+sleep 60
+
+if [ -e /var/clearos/ipsec/libreswan_boot ]; then
+    logger -p local6.notice -t installer "app-ipsec-core - deleting libreswan boot cron" 
+    rm -f /etc/cron.d/app-ipsec-migrate
+else
+    logger -p local6.notice -t installer "app-ipsec-core - updating libreswan boot policy" 
+ls /etc/init.d/ >> /tmp/wtf.log
+    /sbin/chkconfig --add ipsec >/dev/null 2>&1
+    /sbin/chkconfig ipsec on >/dev/null 2>&1
+
+    touch /var/clearos/ipsec/libreswan_boot
+fi

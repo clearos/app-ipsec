@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'ipsec';
-$app['version'] = '1.8.0';
+$app['version'] = '1.8.1';
 $app['release'] = '1';
 $app['vendor'] = 'ClearFoundation';
 $app['packager'] = 'ClearFoundation';
@@ -29,9 +29,13 @@ $app['menu_enabled'] = FALSE;
 $app['core_only'] = TRUE;
 
 $app['core_requires'] = array(
-    '/usr/sbin/ipsec',
+    'libreswan',
 );
 
 $app['core_file_manifest'] = array(
     'ipsec.php' => array('target' => '/var/clearos/base/daemon/ipsec.php'),
+);
+
+$app['core_directory_manifest'] = array(
+    '/var/clearos/ipsec' => array()
 );

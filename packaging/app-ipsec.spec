@@ -1,7 +1,7 @@
 
 Name: app-ipsec
 Epoch: 1
-Version: 1.8.0
+Version: 1.8.1
 Release: 1%{dist}
 Summary: IPsec - Core
 License: LGPLv3
@@ -15,7 +15,7 @@ The IPsec app provides core system functions for IPsec VPNs
 %package core
 Summary: IPsec - Core
 Requires: app-base-core
-Requires: /usr/sbin/ipsec
+Requires: libreswan
 
 %description core
 The IPsec app provides core system functions for IPsec VPNs
@@ -30,6 +30,7 @@ This package provides the core API and libraries.
 mkdir -p -m 755 %{buildroot}/usr/clearos/apps/ipsec
 cp -r * %{buildroot}/usr/clearos/apps/ipsec/
 
+install -d -m 0755 %{buildroot}/var/clearos/ipsec
 install -D -m 0644 packaging/ipsec.php %{buildroot}/var/clearos/base/daemon/ipsec.php
 
 %post core
@@ -55,6 +56,7 @@ exit 0
 %defattr(-,root,root)
 %exclude /usr/clearos/apps/ipsec/packaging
 %dir /usr/clearos/apps/ipsec
+%dir /var/clearos/ipsec
 /usr/clearos/apps/ipsec/deploy
 /usr/clearos/apps/ipsec/language
 /var/clearos/base/daemon/ipsec.php
